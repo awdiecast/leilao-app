@@ -392,8 +392,13 @@ async function handleApi(req, res, url) {
       if (!m) return sendJSON(res, 400, { ok: false, error: 'Foto inválida' });
       const ext = m[1] === 'jpeg' ? 'jpg' : m[1];
       const fname = `mini-${state.nextItemNo}-${uid()}.${ext}`;
-      fs.writeFileSync(path.join(UPLOADS_DIR, fname), Buffer.from(m[2], 'base64'));
-      photo = `/uploads/${fname}`;
+      try {
+        fs.writeFileSync(path.join(UPLOADS_DIR, fname), Buffer.from(m[2], 'base64'));
+        photo = `/uploads/${fname}`;
+      } catch {
+        // Disco somente-leitura (ex.: Deno Deploy): guarda a foto embutida no item.
+        photo = body.photoDataUrl;
+      }
     } else if (body.photo) {
       photo = String(body.photo);
     }
