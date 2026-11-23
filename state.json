@@ -1,0 +1,9 @@
+{
+  "auction": {
+    "status": "draft",
+    "lastActivityAt": 0
+  },
+  "items": [],
+  "chat": [],
+  "nextItemNo": 1
+}

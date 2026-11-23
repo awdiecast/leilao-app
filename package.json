@@ -1,0 +1,1 @@
+{"description":"Leilão ao vivo AW Diecast — versão pública (Node puro, zero dependências)","engines":{"node":">=18"},"main":"server.js","name":"leilao-aw-diecast","private":true,"scripts":{"start":"node server.js"},"version":"1.0.0"}

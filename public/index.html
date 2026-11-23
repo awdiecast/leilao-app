@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leilão AW Diecast — ao vivo</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/assets/logo-aw.png">
+</head>
+<body class="visitor">
+<div class="watermark"><img src="/assets/logo-aw.png" alt=""></div>
+<div class="page">
+  <div class="brandrow">
+    <img src="/assets/logo-aw.png" alt="AW">
+    <span class="brandname">LEILÃO AW DIECAST</span>
+  </div>
+
+  <div class="card online-strip">👥 <b id="onlineCount">0</b> pessoas online agora</div>
+
+  <div class="card name-row" id="nameRow">
+    <input id="nameInput" type="text" placeholder="Seu nome pra dar lance" autocomplete="name" maxlength="40">
+    <button id="nameSaveBtn" type="button">Entrar</button>
+  </div>
+  <div class="name-saved hidden" id="nameSaved">
+    👋 Olá, <b id="savedName"></b> <button class="linklike" id="nameEditBtn" type="button">alterar</button>
+  </div>
+  <div class="hint" id="nameHint"></div>
+
+  <section class="card stage" id="stageCard">
+    <div class="photo-frame">
+      <img id="stagePhoto" class="hidden" alt="Mini no palco">
+      <div class="nophoto" id="stageEmpty">⏳ Aguardando a próxima mini no palco…</div>
+      <div class="countdown hidden" id="countdown">0s</div>
+    </div>
+    <div id="liveInfo">
+      <div class="stage-info" id="stageInfoRow">
+        <span class="mini-no" id="stageMiniNo"></span>
+        <span class="price" id="stagePrice"></span>
+      </div>
+      <div class="leader-line" id="leaderLine"></div>
+      <button class="bid-btn idle" id="bidBtn" type="button">AGUARDANDO INÍCIO</button>
+    </div>
+    <div id="resultInfo" class="hidden">
+      <div class="result-banner" id="resultBanner"></div>
+      <div class="result-sub" id="resultSub"></div>
+    </div>
+  </section>
+
+  <section class="card chat-card">
+    <div class="chat-title">💬 Chat ao vivo</div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Escreva no chat…" maxlength="300" autocomplete="off">
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+    <div class="chat-error" id="chatError"></div>
+  </section>
+
+  <section class="card wins hidden" id="winsCard">
+    <h3>🏆 Suas minis ganhas (<span id="winsCount">0</span>)</h3>
+    <div id="winsList"></div>
+    <div class="wins-total" id="winsTotal"></div>
+    <button class="whats-btn hidden" id="whatsBtn" type="button">Confirmar tudo no WhatsApp</button>
+  </section>
+</div>
+<script src="/visitor.js"></script>
+</body>
+</html>
